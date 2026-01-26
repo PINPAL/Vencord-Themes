@@ -1,0 +1,25 @@
+/* New Row for Chat Message Text Input */
+div.f75fb00fb7356cbe-channelTextArea,
+div.channelTextArea_f75fb0 {
+    /* Container */
+    div._740174f3d6a2c8fe-sansAttachButton,
+    div.sansAttachButton__74017 {
+        padding-top: calc(
+			var(--custom-channel-textarea-text-area-height) - ((var(--custom-channel-textarea-text-area-height) - var(--chat-markup-line-height)) / 2)
+		);
+    }
+    /* Attach File Button */
+    div._0923f156a0410684-attachWrapper,
+    div.attachWrapper__0923f {
+        position: absolute;
+        top: 0;
+        left: calc(var(--space-16) - 1px);
+    }
+    /* Right Buttons */
+    div._740174f3d6a2c8fe-buttons,
+    div.buttons__74017 {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}

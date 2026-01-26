@@ -1,0 +1,11 @@
+/* Online Friends Homepage */
+main[aria-label="Friends"] > div > div#online-tab {
+    /* Compact Friends Online List */
+    div[data-list-id="people"] > div > div[role='listitem'] {
+        height:56px !important;
+    }
+    /* Always show "Active Now" column regardless of width */
+    + div:has(aside.refresh-active-now) {
+        display: block !important;
+    }
+}

@@ -1,0 +1,10 @@
+ul[aria-label="Direct Messages"] {
+	/* "Nitro Home" */
+	li:has(> div > a[href="/store"]),
+	/* "Shop" */
+    li:has(> div > a[href="/shop"]),
+	/* "Quests" */
+    li:has(> div > a[href="/quest-home"]) {	
+        display: none !important;
+    }
+}
