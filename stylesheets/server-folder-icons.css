@@ -1,45 +1,73 @@
-nav[aria-label="Servers sidebar"] > ul[data-list-id="guildsnav"] .folderGroup__48112{
-	--custom-folder-color: unset !important;
-
-	.folderHeader__48112 {
-		.folderPreview__48112, .folderIcon__48112 {
-			background-color: var(--custom-folder-color, var(--text-default));
-			mask-image: var(--folder-icon, url("https://pinpal.github.io/imageDump/group-folders-icons/Folder.png"));
-			mask-size: contain;
-			mask-position: center;
-			mask-repeat: no-repeat;
-
-			.folderPreviewGuildIcon__48112, > svg {
+nav[aria-label="Servers sidebar"] > ul[data-list-id="guildsnav"] {
+	/* Notifications Server */
+	div[aria-label="Servers"] > .listItem__650eb div[data-dnd-name="Notifications"] > div {
+			background-color: var(--background-mod-strong);
+			
+			> img {
 				display: none;
 			}
-		}
 
-		&[data-dnd-name="irl" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/IRL.png");
-		}
-		&[data-dnd-name="cs" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/CS.png");
-		}
-		&[data-dnd-name="games" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Games.png");
-		}
-		&[data-dnd-name="smp's" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/MC.png");
-		}
-		&[data-dnd-name="mc" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/MC_Alt.png");
-		}
-		&[data-dnd-name="modded" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Forge.png");
-		}
-		&[data-dnd-name="ios" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Jailbreak.png");
-		}
-		&[data-dnd-name="hardware" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/PC.png");
-		}
-		&[data-dnd-name="programming" i] {
-			--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Programming.png");
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background-color: var(--text-default);
+				mask-image: url("https://pinpal.github.io/imageDump/group-folders-icons/Notifications.png");
+				mask-size: 1.5em;
+				mask-position: center;
+				mask-repeat: no-repeat;
+			}
+	}
+	
+	/* Server Folders */
+	.folderGroup__48112 {
+		--custom-folder-color: unset !important;
+
+		.folderHeader__48112 {
+			.folderPreview__48112,
+			.folderIcon__48112 {
+				background-color: var(--custom-folder-color, var(--text-default));
+				mask-image: var(
+					--folder-icon,
+					url("https://pinpal.github.io/imageDump/group-folders-icons/Folder.png")
+				);
+				mask-size: contain;
+				mask-position: center;
+				mask-repeat: no-repeat;
+
+				.folderPreviewGuildIcon__48112,
+				> svg {
+					display: none;
+				}
+			}
+
+			&[data-dnd-name="irl" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/IRL.png");
+			}
+			&[data-dnd-name="cs" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/CS.png");
+			}
+			&[data-dnd-name="games" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Games.png");
+			}
+			&[data-dnd-name="smp's" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/MC.png");
+			}
+			&[data-dnd-name="mc" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/MC_Alt.png");
+			}
+			&[data-dnd-name="modded" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Forge.png");
+			}
+			&[data-dnd-name="ios" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Jailbreak.png");
+			}
+			&[data-dnd-name="hardware" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/PC.png");
+			}
+			&[data-dnd-name="programming" i] {
+				--folder-icon: url("https://pinpal.github.io/imageDump/group-folders-icons/Programming.png");
+			}
 		}
 	}
 }
