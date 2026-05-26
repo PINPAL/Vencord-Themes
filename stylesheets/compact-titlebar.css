@@ -1,0 +1,62 @@
+/* :root {
+	--custom-app-top-bar-height: 32px;
+} */
+
+/* Window name titlebar text */
+.title_c38106 {
+	display: none;
+}
+
+/* Channel "Follow" button for announcement channels */
+.followButton_f75fb0,
+/* Channel additional topic information */
+.topicClickTarget__6ec1a {
+	-webkit-app-region: no-drag !important;
+}
+/* Channel Name/Topic gradient to fade overflow (was incorrect color, use mask instead) */
+.children__9293f {
+	mask-image: linear-gradient(to right, black calc(100% - 8px), transparent 100%);
+
+	&::after {
+		content: unset;
+	}
+}
+
+/* Title bar positioning within window controls & navigation buttons */
+.base__5e434 {
+	anchor-scope: --bar-leading-anchor, --bar-trailing-anchor;
+
+	& > .bar_c38106 > .leading_c38106 {
+		anchor-name: --bar-leading-anchor;
+	}
+	& > .bar_c38106 > .trailing_c38106 {
+		anchor-name: --bar-trailing-anchor;
+	}
+}
+.title_f75fb0 {
+	position: fixed;
+	left: anchor(--bar-leading-anchor right);
+	right: calc(anchor(--bar-trailing-anchor left) + var(--space-8));
+	top: anchor(--bar-trailing-anchor top);
+	bottom: anchor(--bar-trailing-anchor bottom);
+	width: unset;
+	height: unset;
+	min-height: 0;
+	padding: unset !important;
+	margin: unset !important;
+	background: transparent !important;
+	border: none !important;
+
+	/* Fix searchbar height in compact titlebars */
+	.searchBar_c322aa {
+		max-height: calc(var(--custom-app-top-bar-height) - 8px) !important;
+		padding: 0;
+
+		& > .DraftEditor-root,
+		& > .DraftEditor-root * {
+			line-height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
+			height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
+			padding-block: 0 !important;
+		}
+	}
+}
