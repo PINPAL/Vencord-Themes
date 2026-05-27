@@ -7,18 +7,38 @@
 	display: none;
 }
 
-/* Channel "Follow" button for announcement channels */
-.followButton_f75fb0,
-/* Channel additional topic information */
-.topicClickTarget__6ec1a {
-	-webkit-app-region: no-drag !important;
-}
-/* Channel Name/Topic gradient to fade overflow (was incorrect color, use mask instead) */
+/* Channel Name/Topic */
 .children__9293f {
-	mask-image: linear-gradient(to right, black calc(100% - 8px), transparent 100%);
-
+	/* Ensure titlebar has at least 40% blank for window grab area */
+	margin-right: 40% !important;
+	/* Fix gradient to fade overflow (was incorrect color, use mask instead) */
+	mask-image: linear-gradient(to right, black calc(100% - var(--space-sm)), transparent 100%);
 	&::after {
 		content: unset;
+	}
+
+	/* Channel additional topic information */
+	.topic__6ec1a {
+		/* Prevent window being dragged when attempting to open topic modal */
+		& > .topicClickTarget__6ec1a {
+			-webkit-app-region: no-drag !important;
+		}
+
+		/* Ensure mask doesn't clip non-overflowed content */
+		& > span {
+			padding-right: var(--space-sm) !important;
+		}
+	}
+
+	/* Channel "Follow" button for announcement channels */
+	.followButton_f75fb0 > button {
+		/* Prevent window being dragged when attempting to click the button */
+		-webkit-app-region: no-drag !important;
+
+		/* Fix "Follow" height button in compact titlebars */
+		& > .buttonChildrenWrapper_a22cb0 {
+			min-height: 0 !important;
+		}
 	}
 }
 
@@ -46,6 +66,12 @@
 	margin: unset !important;
 	background: transparent !important;
 	border: none !important;
+
+	/* Ensure toolbar buttons & searchbar doesn't shrink */
+	.toolbar__9293f {
+		flex: 0 1 auto;
+		justify-content: end;
+	}
 
 	/* Fix searchbar height in compact titlebars */
 	.searchBar_c322aa {
