@@ -2,11 +2,6 @@
 	--custom-app-top-bar-height: 32px;
 } */
 
-/* Window name titlebar text */
-.title_c38106 {
-	display: none;
-}
-
 /* Channel Name/Topic */
 .children__9293f {
 	/* Ensure titlebar has at least 40% blank for window grab area */
@@ -19,9 +14,17 @@
 
 	/* Channel additional topic information */
 	.topic__6ec1a {
+		text-overflow: clip !important;
+
+		/* Hover on clickable topic */
+		&:has(.topicClickTarget__6ec1a:hover) {
+			color: var(--text-strong);
+		}
+
 		/* Prevent window being dragged when attempting to open topic modal */
 		& > .topicClickTarget__6ec1a {
 			-webkit-app-region: no-drag !important;
+			pointer-events: unset;
 		}
 
 		/* Ensure mask doesn't clip non-overflowed content */
@@ -31,34 +34,46 @@
 	}
 
 	/* Channel "Follow" button for announcement channels */
-	.followButton_f75fb0 > button {
-		/* Prevent window being dragged when attempting to click the button */
-		-webkit-app-region: no-drag !important;
+	.followButton_f75fb0 {
+		margin-inline-end: 0 !important;
 
-		/* Fix "Follow" height button in compact titlebars */
-		& > .buttonChildrenWrapper_a22cb0 {
-			min-height: 0 !important;
+		& > button {
+			/* Prevent window being dragged when attempting to click the button */
+			-webkit-app-region: no-drag !important;
+
+			/* Fix "Follow" height button in compact titlebars */
+			& > .buttonChildrenWrapper_a22cb0 {
+				min-height: 0 !important;
+			}
 		}
 	}
 }
 
 /* Title bar positioning within window controls & navigation buttons */
 .base__5e434 {
-	anchor-scope: --bar-leading-anchor, --bar-trailing-anchor;
+	anchor-scope: --bar-anchor;
 
-	& > .bar_c38106 > .leading_c38106 {
-		anchor-name: --bar-leading-anchor;
-	}
-	& > .bar_c38106 > .trailing_c38106 {
-		anchor-name: --bar-trailing-anchor;
+	/* Window name titlebar text */
+	& > .bar_c38106 > .title_c38106 {
+		position: static;
+		flex: 1;
+		height: 100%;
+		gap: var(--space-md);
+		
+		&::after {
+			content: '';
+			height: 100%;
+			flex: 1;
+			anchor-name: --bar-anchor;
+		}
 	}
 }
 .title_f75fb0 {
 	position: fixed;
-	left: anchor(--bar-leading-anchor right);
-	right: calc(anchor(--bar-trailing-anchor left) + var(--space-8));
-	top: anchor(--bar-trailing-anchor top);
-	bottom: anchor(--bar-trailing-anchor bottom);
+	left: anchor(--bar-anchor left);
+    right: anchor(--bar-anchor right);
+    top: anchor(--bar-anchor top);
+    bottom: anchor(--bar-anchor bottom);
 	width: unset;
 	height: unset;
 	min-height: 0;
