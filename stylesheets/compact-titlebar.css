@@ -84,7 +84,7 @@
 
 	/* Ensure toolbar buttons & searchbar doesn't shrink */
 	.toolbar__9293f {
-		flex: 0 1 auto;
+		flex: 1 0 auto;
 		justify-content: end;
 	}
 
