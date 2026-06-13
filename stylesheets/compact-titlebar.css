@@ -4,17 +4,39 @@
 
 /* Channel Name/Topic */
 .children__9293f {
-	/* Ensure titlebar has at least 40% blank for window grab area */
-	margin-right: 40% !important;
 	/* Fix gradient to fade overflow (was incorrect color, use mask instead) */
-	mask-image: linear-gradient(to right, black calc(100% - var(--space-sm)), transparent 100%);
+	mask-image: linear-gradient(
+		to right,
+		black calc(min(100% - 25vw, 50%) - var(--space-sm)),
+		rgba(0, 0, 0, 0.5) min(100% - 25vw, 50%),
+		rgba(0, 0, 0, 0.5) calc(100% - var(--space-sm)),
+		transparent 100%
+	);
+
+	/* Ensure titlebar has at least 50% blank for window grab area */
 	&::after {
-		content: unset;
+		background: transparent !important;
+		position: static !important;
+		width: max(25vw, 50%) !important;
+        min-width: max(25vw, 50%) !important;
+        max-width: max(25vw, 50%) !important;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: max(25vw, 50%) !important;
+        min-width: max(25vw, 50%) !important;
+        max-width: max(25vw, 50%) !important;
 	}
 
 	/* Channel additional topic information */
 	.topic__6ec1a {
 		text-overflow: clip !important;
+		overflow: visible !important;
+		transition: color 50ms ease-in;
 
 		/* Hover on clickable topic */
 		&:has(.topicClickTarget__6ec1a:hover) {
@@ -51,7 +73,7 @@
 
 /* Title bar positioning within window controls & navigation buttons */
 .base__5e434 {
-	anchor-scope: --bar-anchor;
+	/* anchor-scope: --bar-anchor; */
 
 	/* Window name titlebar text */
 	& > .bar_c38106 > .title_c38106 {
@@ -59,45 +81,65 @@
 		flex: 1;
 		height: 100%;
 		gap: var(--space-md);
-		
+
 		&::after {
-			content: '';
+			content: "";
 			height: 100%;
 			flex: 1;
 			anchor-name: --bar-anchor;
 		}
 	}
 }
-.title_f75fb0 {
-	position: fixed;
+
+/* Workaround for DM Call losing position anchor reference */
+.topControls_bfe55a,
+/* Otherwise, target specifically non DM titlebars */
+.page__5e434 > div > div > .subtitleContainer_f75fb0 {
+    width: unset;
+    height: unset;
+    position: fixed;
 	left: anchor(--bar-anchor left);
-    right: anchor(--bar-anchor right);
-    top: anchor(--bar-anchor top);
-    bottom: anchor(--bar-anchor bottom);
-	width: unset;
-	height: unset;
-	min-height: 0;
-	padding: unset !important;
-	margin: unset !important;
-	background: transparent !important;
-	border: none !important;
+	right: anchor(--bar-anchor right);
+	top: anchor(--bar-anchor top);
+	bottom: anchor(--bar-anchor bottom);
+}
+/* Workaround for DM Call, forces the bottom bar back to the bottom */
+.videoControls_bfe55a {
+    justify-content: flex-end;
 
-	/* Ensure toolbar buttons & searchbar doesn't shrink */
-	.toolbar__9293f {
-		flex: 1 0 auto;
-		justify-content: end;
-	}
+	/* Workaround for DM Call, prevents escaping the anchor with it's default negative margins */
+    > .topControls_bfe55a {
+        .headerWrapper_cb9592 {
+            margin: 0 !important;
+        }
+    }
+}
 
-	/* Fix searchbar height in compact titlebars */
-	.searchBar_c322aa {
-		max-height: calc(var(--custom-app-top-bar-height) - 8px) !important;
-		padding: 0;
+.title_f75fb0 {
+    width: unset;
+    height: var(--custom-app-top-bar-height);
+    min-height: 0;
+    padding: unset !important;
+    margin: unset !important;
+    background: transparent !important;
+    border: none !important;
 
-		& > .DraftEditor-root,
-		& > .DraftEditor-root * {
-			line-height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
-			height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
-			padding-block: 0 !important;
-		}
-	}
+    /* Ensure toolbar buttons & searchbar doesn't shrink */
+    .toolbar__9293f {
+        flex-shrink: 0 !important;
+        justify-content: end;
+    }
+
+    /* Fix searchbar height in compact titlebars */
+    .searchBar_c322aa {
+        max-height: calc(var(--custom-app-top-bar-height) - 8px) !important;
+        padding: 0;
+
+        & > .DraftEditor-root,
+        & > .DraftEditor-root * {
+            line-height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
+            height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
+            padding-block: 0 !important;
+        }
+    }
 }
