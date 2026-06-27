@@ -129,17 +129,28 @@
         flex-shrink: 0 !important;
         justify-content: end;
     }
+	
+	.search__49676 {
+		/* Ensure searchbar can fit full search query */
+		&:has(> .search_c322aa.open_c322aa) {
+			flex-grow: 2;
+			min-width: clamp(var(--space-64), 100cqi - 320px, 244px);
+			width: fit-content;
+			max-width: calc(100cqi - 320px);
+		}
 
-    /* Fix searchbar height in compact titlebars */
-    .searchBar_c322aa {
-        max-height: calc(var(--custom-app-top-bar-height) - 8px) !important;
-        padding: 0;
+		/* Fix searchbar height in compact titlebars */
+		.searchBar_c322aa {
+			max-height: calc(var(--custom-app-top-bar-height) - 8px) !important;
+			padding: 0;
 
-        & > .DraftEditor-root,
-        & > .DraftEditor-root * {
-            line-height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
-            height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
-            padding-block: 0 !important;
-        }
-    }
+			& > .DraftEditor-root,
+			& > .DraftEditor-root * {
+				line-height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
+				height: min(22px, var(--custom-app-top-bar-height) - 12px) !important;
+				padding-block: 0 !important;
+				scrollbar-width: thin;
+			}
+		}
+	}
 }
