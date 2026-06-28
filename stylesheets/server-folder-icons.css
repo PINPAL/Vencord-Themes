@@ -1,4 +1,4 @@
-nav[aria-label="Servers sidebar"] > ul[data-list-id="guildsnav"] {
+nav[aria-label="Servers sidebar"] > div[data-list-id="guildsnav"] {
 	/* Notifications Server */
 	div[aria-label="Servers"] > .listItem__650eb div[data-dnd-name="Notifications"] > div {
 			background-color: var(--background-mod-subtle);
