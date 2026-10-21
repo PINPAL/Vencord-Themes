@@ -72,11 +72,14 @@
 }
 
 /* Title bar positioning within window controls & navigation buttons */
-.base__5e434 {
-	/* anchor-scope: --bar-anchor; */
+.base__5e434 > .bar_c38106 {
+	/* Back & forward buttons */
+	> .leading_c38106 {
+		order: -1;
+	}
 
 	/* Window name titlebar text */
-	& > .bar_c38106 > .title_c38106 {
+	> .title_c38106 {
 		position: static;
 		flex: 1;
 		height: 100%;
