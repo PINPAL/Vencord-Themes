@@ -3,7 +3,7 @@
 } */
 
 /* Channel Name/Topic */
-.children__9293f {
+.children_ybUK7Z {
 	/* Fix gradient to fade overflow (was incorrect color, use mask instead) */
 	mask-image: linear-gradient(
 		to right,
@@ -33,18 +33,18 @@
 	}
 
 	/* Channel additional topic information */
-	.topic__6ec1a {
+	.topic_pVbL3l {
 		text-overflow: clip !important;
 		overflow: visible !important;
 		transition: color 50ms ease-in;
 
 		/* Hover on clickable topic */
-		&:has(.topicClickTarget__6ec1a:hover) {
+		&:has(.topicClickTarget_pVbL3l:hover) {
 			color: var(--text-strong);
 		}
 
 		/* Prevent window being dragged when attempting to open topic modal */
-		& > .topicClickTarget__6ec1a {
+		& > .topicClickTarget_pVbL3l {
 			-webkit-app-region: no-drag !important;
 			pointer-events: unset;
 		}
@@ -56,7 +56,7 @@
 	}
 
 	/* Channel "Follow" button for announcement channels */
-	.followButton_f75fb0 {
+	.followButton_z_gUBg {
 		margin-inline-end: 0 !important;
 
 		& > button {
@@ -64,7 +64,7 @@
 			-webkit-app-region: no-drag !important;
 
 			/* Fix "Follow" height button in compact titlebars */
-			& > .buttonChildrenWrapper_a22cb0 {
+			& > .buttonChildrenWrapper_F7qvhY {
 				min-height: 0 !important;
 			}
 		}
@@ -72,14 +72,14 @@
 }
 
 /* Title bar positioning within window controls & navigation buttons */
-.base__5e434 > .bar_c38106 {
+.base_pog62O > .bar_3zSH5d {
 	/* Back & forward buttons */
-	> .leading_c38106 {
+	> .leading_3zSH5d {
 		order: -1;
 	}
 
 	/* Window name titlebar text */
-	> .title_c38106 {
+	> .title_3zSH5d {
 		position: static;
 		flex: 1;
 		height: 100%;
@@ -95,9 +95,9 @@
 }
 
 /* Workaround for DM Call losing position anchor reference */
-.topControls_bfe55a,
+.topControls_rTsZa_,
 /* Otherwise, target specifically non DM titlebars */
-.page__5e434 > div > div > .subtitleContainer_f75fb0 {
+.page_pog62O > div > div > .subtitleContainer_z_gUBg {
     width: unset;
     height: unset;
     position: fixed;
@@ -107,18 +107,18 @@
 	bottom: anchor(--bar-anchor bottom);
 }
 /* Workaround for DM Call, forces the bottom bar back to the bottom */
-.videoControls_bfe55a {
+.videoControls_rTsZa_ {
     justify-content: flex-end;
 
 	/* Workaround for DM Call, prevents escaping the anchor with it's default negative margins */
-    > .topControls_bfe55a {
-        .headerWrapper_cb9592 {
+    > .topControls_rTsZa_ {
+        .headerWrapper_hbKzX7 {
             margin: 0 !important;
         }
     }
 }
 
-.title_f75fb0 {
+.title_z_gUBg {
     width: unset;
     height: var(--custom-app-top-bar-height);
     min-height: 0;
@@ -128,14 +128,14 @@
     border: none !important;
 
     /* Ensure toolbar buttons & searchbar doesn't shrink */
-    .toolbar__9293f {
+    .toolbar_ybUK7Z {
         flex-shrink: 0 !important;
         justify-content: end;
     }
 	
-	.search__49676 {
+	.search_bWCaDq {
 		/* Ensure searchbar can fit full search query */
-		&:has(> .search_c322aa.open_c322aa) {
+		&:has(> .search_i16Ad0.open_i16Ad0) {
 			flex-grow: 2;
 			min-width: clamp(var(--space-64), 100cqi - 320px, 244px);
 			width: fit-content;
@@ -143,7 +143,7 @@
 		}
 
 		/* Fix searchbar height in compact titlebars */
-		.searchBar_c322aa {
+		.searchBar_i16Ad0 {
 			max-height: calc(var(--custom-app-top-bar-height) - 8px) !important;
 			padding: 0;
 

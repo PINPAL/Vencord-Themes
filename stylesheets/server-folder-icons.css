@@ -1,31 +1,38 @@
-nav[aria-label="Servers sidebar"] > div[data-list-id="guildsnav"] {
+nav[aria-label="Servers sidebar"] > div[data-list-id="guildsnav"] > div > div[aria-label="Servers"] {
 	/* Notifications Server */
-	div[aria-label="Servers"] > .listItem__650eb div[data-dnd-name="Notifications"] > div {
-			background-color: var(--background-mod-subtle);
-			
-			> img {
-				display: none;
-			}
+	> .listItem_rwEpIL div[data-dnd-name="Notifications"] > div {
+		background-color: var(--background-mod-subtle);
 
-			&::after {
-				content: "";
-				position: absolute;
-				inset: 0;
-				background-color: var(--text-default);
-				mask-image: url("https://pinpal.github.io/imageDump/group-folders-icons/Notifications.png");
-				mask-size: 1.5em;
-				mask-position: center;
-				mask-repeat: no-repeat;
-			}
+		&:hover {
+			background-color: var(--background-brand);
+		}
+		
+		> img {
+			display: none;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background-color: var(--text-default);
+			mask-image: url("https://pinpal.github.io/imageDump/group-folders-icons/Notifications.png");
+			mask-size: 1.5em;
+			mask-position: center;
+			mask-repeat: no-repeat;
+		}
 	}
 	
 	/* Server Folders */
-	.folderGroup__48112 {
+	> .folderGroup_RTMSuZ {
 		--custom-folder-color: unset !important;
 
-		.folderHeader__48112 {
-			.folderPreview__48112,
-			.folderIcon__48112 {
+		.folderHeader_RTMSuZ {
+
+			/* Collapsed Folder (server icon grid) */
+			.folderPreview_RTMSuZ,
+			/* Expanded Folder (folder svg) */
+			.folderIcon_RTMSuZ {
 				background-color: var(--custom-folder-color, var(--text-default));
 				mask-image: var(
 					--folder-icon,
@@ -35,7 +42,9 @@ nav[aria-label="Servers sidebar"] > div[data-list-id="guildsnav"] {
 				mask-position: center;
 				mask-repeat: no-repeat;
 
-				.folderPreviewGuildIcon__48112,
+				/* In Collapsed Folder (each server's icon) */
+				.folderPreviewGuildIcon_RTMSuZ,
+				/* In Expanded Folder (the 'folder' svg icon) */
 				> svg {
 					display: none;
 				}
