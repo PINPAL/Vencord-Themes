@@ -107,6 +107,7 @@
 	right: anchor(--bar-anchor right);
 	top: anchor(--bar-anchor top);
 	bottom: anchor(--bar-anchor bottom);
+	z-index: 99999;
 }
 /* Workaround for DM Call, forces the bottom bar back to the bottom */
 .videoControls_rTsZa_ {
