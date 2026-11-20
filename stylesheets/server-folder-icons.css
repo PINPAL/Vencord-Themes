@@ -2,6 +2,10 @@ nav[aria-label="Servers sidebar"] > div[data-list-id="guildsnav"] > div > div[ar
 	/* Notifications Server */
 	> .listItem_rwEpIL div[data-dnd-name="Notifications"] > div {
 		background-color: var(--background-mod-subtle);
+		/* In custom themes, circleIconButton uses a different color so we match instead */
+		.custom-theme-background & {
+            background-color: var(--background-mod-strong);
+        }
 
 		&:hover {
 			background-color: var(--background-brand);
