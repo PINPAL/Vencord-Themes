@@ -73,6 +73,8 @@
 
 /* Title bar positioning within window controls & navigation buttons */
 .base_pog62O > .bar_3zSH5d {
+	background-color: transparent !important;
+	
 	/* Back & forward buttons */
 	> .leading_3zSH5d {
 		order: -1;
